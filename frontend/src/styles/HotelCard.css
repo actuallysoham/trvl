@@ -3,7 +3,6 @@
   width: 100%;
   overflow-x: scroll !important;
   justify-content: space-evenly;
-  padding-left: 30%;
   margin-top: 3%;
   padding-bottom: 3%;
 }
@@ -50,6 +49,8 @@ border-radius: 15px;
 .hotelcard-price {
   color: black;
   text-align: left;
+  font-weight: normal;
+  font-size: medium;
 }
 
 .hotelcard-image {
@@ -63,5 +64,4 @@ border-radius: 15px;
   font-size: small;
   text-align: left !important;
   padding: 5%;
-  font-weight: normal;
 }

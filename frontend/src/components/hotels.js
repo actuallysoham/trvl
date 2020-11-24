@@ -33,7 +33,7 @@ const HotelsComp = ({ hotels, datefrom, dateto, selectHotel }) => {
                 </div>
 
                 <div className="hotel-price">${hotel.price}
-                <button className="flight-button" onClick={() => selectHotel(hotel.price, hotel._id)}>Select</button></div>
+                </div>
 
                 </div>
 
