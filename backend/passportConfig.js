@@ -5,7 +5,7 @@ const User = require("./user");
 const bcrypt = require("bcryptjs");
 const localStrategy = require("passport-local").Strategy;
 const GoogleStrategy = require('passport-google-oauth20').Strategy;
-
+require('dotenv').config();
 
 module.exports = function (passport) {
 
@@ -27,8 +27,8 @@ module.exports = function (passport) {
   );
 
   passport.use(new GoogleStrategy({
-    clientID: "751001492083-rqrsijcv9pveemuj4rihnt4obcvhg8ju.apps.googleusercontent.com",
-    clientSecret: "5jCOpS7nLjlhcR0m6zkt5K89",
+    clientID: process.env.GOOGLE_ID,
+    clientSecret: process.env.GOOGLE_SECRET,
     callbackURL: "http://localhost:5000/google/callback"
     //callbackURL: "http://localhost:3000/profile"
   },

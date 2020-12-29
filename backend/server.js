@@ -18,7 +18,7 @@ const User = require("./user");
 const Hotel = require("./hotels");
 var Amadeus = require('amadeus');
 const user = require("./user");
-
+require('dotenv').config();
 
 const app = express()
 const PORT = 5000
@@ -26,7 +26,7 @@ const PORT = 5000
 //========================================= MONGODB CONNECT
 
 mongoose.connect(
-    "mongodb+srv://soham:thisisthepassword@test-cluster.qybal.mongodb.net/test-cluster?retryWrites=true&w=majority",
+  process.env.MONGODB_CONNECT,
     {
       useNewUrlParser: true,
       useUnifiedTopology: true,
@@ -61,8 +61,8 @@ require("./passportConfig")(passport);
 
 //========================================= amadeus ROUTES
 var amadeus = new Amadeus({
-  clientId: 'Xnc7wXfiMCNVXSKiUV7fgXS3V8uAQErF',
-  clientSecret: 'JTkx2KeymMlRISAQ'
+  clientId: process.env.AMADEUS_ID,
+  clientSecret: process.env.AMADEUS_SECRET,
 });
 
 app.get(`/citySearch`, async (req, res) => { 
